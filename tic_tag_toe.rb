@@ -1,8 +1,4 @@
-# (1..9).each do |n|
-
-# 	puts " #{num[n]} | "
-
-# end
+# tic-tag-toe game
 
 a = []
 
