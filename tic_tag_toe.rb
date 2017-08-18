@@ -12,6 +12,8 @@ play = "1"
 game = 1
 error = ""
 
+#ask for user name
+
 while game == 1 do 
 
 	puts "\e[H\e[2J"
