@@ -27,14 +27,14 @@ while game == 1 do
 	puts "Player #{play} Select a number:"
 	puts error
 	choice = gets.chomp.to_i
-	error = "test"
-	check = 0
+	error = ""
+	check = 9
 	(0..8).each do |m|
 
 		if choice == a[m]
 			if play == "1" then a[m] = "X" else a[m] = "o" end
 			if play == "1" then play = "2" else play = "1" end
-			check = 9
+			# check = 9
 		else
 			check = check - 1
 		end
