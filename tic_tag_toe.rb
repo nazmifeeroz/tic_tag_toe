@@ -1,5 +1,8 @@
 # tic-tag-toe game
 
+puts "Play against player(p) or computer(c)?"
+pc = gets.chomp
+
 play = "y"
 
 while play == "y" do
