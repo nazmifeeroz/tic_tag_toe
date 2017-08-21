@@ -1,5 +1,5 @@
 # (1..9).each do |n|
-
+#push again
 # 	puts " #{num[n]} | "
 
 # end
