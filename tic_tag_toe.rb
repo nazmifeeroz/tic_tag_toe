@@ -82,19 +82,20 @@ while play == "y" do
 		end
 
 		puts "\e[H\e[2J"
-		puts "\tIt's " + name[0] + " VS " + name[1] +"!!\n\n"
+		puts "\tIt's " + name[0] + " VS " + name[1] +"!!\n\n\n\n"
 
-		puts "\tTic-Tag-Toe"
-		puts "\t-----------\n\n"
-		puts "\t #{a[0]} | #{a[1]} | #{a[2]}"
-		puts "\t ---------"
-		puts "\t #{a[3]} | #{a[4]} | #{a[5]}"
-		puts "\t ---------"
-		puts "\t #{a[6]} | #{a[7]} | #{a[8]}\n\n"
-		puts "Enter 12 to quit. 11 to reset game."
-		puts "#{name[play]} Enter Choice:"
+		puts "\t\t\t\tTic-Tag-Toe"
+		puts "\t\t\t\t-----------\n\n"
+		puts "\t\t\t\t #{a[0]} | #{a[1]} | #{a[2]}"
+		puts "\t\t\t\t ---------"
+		puts "\t\t\t\t #{a[3]} | #{a[4]} | #{a[5]}"
+		puts "\t\t\t\t ---------"
+		puts "\t\t\t\t #{a[6]} | #{a[7]} | #{a[8]}\n\n\n"
+		puts "Enter 12 to quit. 11 to reset game.\n"
+		puts "\n\n#{error}\n\n"
+		print "#{name[play]} Enter Choice: "
 		choice = gets.chomp.to_i
-		puts error
+		
 
 		
 		error = ""
