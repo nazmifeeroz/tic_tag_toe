@@ -142,54 +142,10 @@ else
 
 		while game <= 9 do 
 
-			if a[0] == "X" && a[3] == "X" && a[6] == "X"
+			if winning_check(a, "X")
 				puts "#{name[0]} wins!" 
 				break 
-			elsif a[0] == "X" && a[1] == "X" && a[2] == "X"
-				puts "#{name[0]} wins!" 
-				break 
-			elsif a[0] == "X" && a[4] == "X" && a[8] == "X"
-				puts "#{name[0]} wins!" 
-				break 
-			elsif a[1] == "X" && a[4] == "X" && a[7] == "X"
-				puts "#{name[0]} wins!" 
-				break 
-			elsif a[3] == "X" && a[4] == "X" && a[5] == "X"
-				puts "#{name[0]} wins!" 
-				break 
-			elsif a[4] == "X" && a[6] == "X" && a[2] == "X"
-				puts "#{name[0]} wins!" 
-				break 
-			elsif a[5] == "X" && a[8] == "X" && a[2] == "X"
-				puts "#{name[0]} wins!" 
-				break 
-			elsif a[6] == "X" && a[7] == "X" && a[8] == "X"
-				puts "#{name[0]} wins!" 
-				break 
-			end
-
-			if a[0] == "o" && a[3] == "o" && a[6] == "o"
-				puts "Computer wins!" 
-				break 
-			elsif a[0] == "o" && a[1] == "o" && a[2] == "o"
-				puts "Computer wins!" 
-				break 
-			elsif a[0] == "o" && a[4] == "o" && a[8] == "o"
-				puts "Computer wins!" 
-				break 
-			elsif a[1] == "o" && a[4] == "o" && a[7] == "o"
-				puts "Computer wins!" 
-				break 
-			elsif a[3] == "o" && a[4] == "o" && a[5] == "o"
-				puts "Computer wins!" 
-				break 
-			elsif a[4] == "o" && a[6] == "o" && a[2] == "o"
-				puts "Computer wins!" 
-				break 
-			elsif a[5] == "o" && a[8] == "o" && a[2] == "o"
-				puts "Computer wins!" 
-				break 
-			elsif a[6] == "o" && a[7] == "o" && a[8] == "o"
+			elsif winning_check(a, "o")
 				puts "Computer wins!" 
 				break 
 			end
