@@ -1,23 +1,45 @@
 # tic-tag-toe game
 def winning_check(a, player_sym)
 
-	if a[0] == player_sym && a[3] == player_sym && a[6] == player_sym
+	[0, 1, 2].each do |col_first_box_index|
+		second_box_index = col_first_box_index + 3
+		third_box_index = col_first_box_index + 6
+		if a[col_first_box_index] == player_sym && a[second_box_index] == player_sym && a[third_box_index] == player_sym
+			return true
+			break
+		end
+	end
+
+	[0, 3, 6].each do |col_first_box_index|
+		second_box_index = col_first_box_index + 1
+		third_box_index = col_first_box_index + 2
+		if a[col_first_box_index] == player_sym && a[second_box_index] == player_sym && a[third_box_index] == player_sym
+			return true
+			break
+		end
+	end
+
+	if a[0] == player_sym && a[4] == player_sym && a[8] == player_sym
 		return true
-	elsif a[0] == player_sym && a[1] == player_sym && a[2] == player_sym
-		return true
-	elsif a[0] == player_sym && a[4] == player_sym && a[8] == player_sym
-		 return true
-	elsif a[1] == player_sym && a[4] == player_sym && a[7] == player_sym
-		 return true
-	elsif a[3] == player_sym && a[4] == player_sym && a[5] == player_sym
-		 return true
 	elsif a[4] == player_sym && a[6] == player_sym && a[2] == player_sym
-		 return true
-	elsif a[5] == player_sym && a[8] == player_sym && a[2] == player_sym
-		return true
-	elsif a[6] == player_sym && a[7] == player_sym && a[8] == player_sym
 		return true
 	end
+end
+
+def board(play, a, error, name, pc)
+	puts "\e[H\e[2J"
+	if pc != "p" then name[1] = "Computer" end
+	puts "\tIt's " + name[0] + " VS " + name[1] +"!!\n\n\n\n"
+	puts "\t\t\t\tTic-Tag-Toe"
+	puts "\t\t\t\t-----------\n\n"
+	puts "\t\t\t\t #{a[0]} | #{a[1]} | #{a[2]}"
+	puts "\t\t\t\t ---------"
+	puts "\t\t\t\t #{a[3]} | #{a[4]} | #{a[5]}"
+	puts "\t\t\t\t ---------"
+	puts "\t\t\t\t #{a[6]} | #{a[7]} | #{a[8]}\n\n\n"
+	puts "Enter 12 to quit. 11 to reset game.\n"
+	puts "\n\n#{error}\n\n"
+	print "#{name[play]} Enter Choice: "
 end
 
 puts "\e[H\e[2J"
@@ -59,22 +81,8 @@ if pc == "p"
 				break 
 			end
 
-			puts "\e[H\e[2J"
-			puts "\tIt's " + name[0] + " VS " + name[1] +"!!\n\n\n\n"
-
-			puts "\t\t\t\tTic-Tag-Toe"
-			puts "\t\t\t\t-----------\n\n"
-			puts "\t\t\t\t #{a[0]} | #{a[1]} | #{a[2]}"
-			puts "\t\t\t\t ---------"
-			puts "\t\t\t\t #{a[3]} | #{a[4]} | #{a[5]}"
-			puts "\t\t\t\t ---------"
-			puts "\t\t\t\t #{a[6]} | #{a[7]} | #{a[8]}\n\n\n"
-			puts "Enter 12 to quit. 11 to reset game.\n"
-			puts "\n\n#{error}\n\n"
-			print "#{name[play]} Enter Choice: "
+			board(play, a, error, name, pc)
 			choice = gets.chomp.to_i
-			
-
 			
 			error = ""
 			check = 9
@@ -155,21 +163,9 @@ else
 				break 
 			end
 
-			puts "\e[H\e[2J"
-			puts "\tIt's " + name[0] + " VS Computer!!\n\n\n\n"
+			board(play, a, error, name, pc)
 
-			puts "\t\t\t\tTic-Tag-Toe"
-			puts "\t\t\t\t-----------\n\n"
-			puts "\t\t\t\t #{a[0]} | #{a[1]} | #{a[2]}"
-			puts "\t\t\t\t ---------"
-			puts "\t\t\t\t #{a[3]} | #{a[4]} | #{a[5]}"
-			puts "\t\t\t\t ---------"
-			puts "\t\t\t\t #{a[6]} | #{a[7]} | #{a[8]}\n\n\n"
-			puts "Enter 12 to quit. 11 to reset game.\n"
-			puts "\n\n#{error}\n\n"
 			puts "Computer chose #{x}"
-			print "#{name[play]} Enter Choice: "
-
 			if play == 0
 				choice = gets.chomp.to_i
 
